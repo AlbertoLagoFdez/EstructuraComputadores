@@ -7,4 +7,5 @@ module mux4_1(output reg out, input wire a, b, c, d, input wire [1:0] S);
     2'b11: out = d;
     endcase
   end
+  
 endmodule
