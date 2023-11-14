@@ -1,6 +1,7 @@
 // Testbench para modulo alu
 `timescale 1 ns / 10 ps //Directiva que fija la unidad de tiempo de simulación y la precision de la unidad
 module alu_tb;
+//Modificación de reemplazar la operación de incremento de A por complemento a 2 de B
 //declaracion de señales
 reg [1:0] t_Op;
 reg t_l, t_cin;
@@ -83,9 +84,9 @@ begin
 	begin
 		case (t_Op)
 			2'b00: expected_R = t_A + t_cin;
-			2'b01: expected_R = (t_A ^4'b1111) + 4'b0001 + t_cin;
+			2'b01: expected_R = (t_A ^ 4'b1111) + 4'b0001 + t_cin;
 			2'b10: expected_R = t_A + t_B + t_cin;
-			2'b11: expected_R = t_A + 1 + t_cin;
+			2'b11: expected_R = (t_B ^ 4'b1111) + 4'b0001 + t_cin;
 			default: $display("ERROR. Valor no esperado para t_Op: %b", t_Op);
 		endcase
 		expected_c = expected_R[4];
