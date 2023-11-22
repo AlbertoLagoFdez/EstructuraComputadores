@@ -1,11 +1,11 @@
 //Componentes varios
 
 // Banco de registros de dos salidas y una entrada
-module regfile(output wire [7:0]  RD1, RD2,     //datos leidos
-               input  wire        clk,          // Señal de reloj
-               input  wire        we3,          //señal de habilitación de escritura
-               input  wire [3:0]  RA1, RA2, WA3,//direcciones de regs leidos y reg a escribir
-               input  wire [7:0]  WD3);         //dato a escribir
+module regfile(output wire [7:0]  RD1, RD2,      //Datos leidos
+               input  wire        clk,           //Señal de reloj
+               input  wire        we3,           //Señal de habilitación de escritura
+               input  wire [3:0]  RA1, RA2, WA3, //Direcciones de regs leidos y reg a escribir
+               input  wire [7:0]  WD3);          //Dato a escribir
 
   reg [7:0] RegBank[0:15]; //memoria de 32 registros de 8 bits de ancho
 
